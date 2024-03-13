@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block carousel %}{% endblock %}
+{% block content %}
+ <!-- Three columns of text below the carousel -->
+ <h3>Nos meilleures ventes </h3>
+   <p>Découvrez les articles les plus vendus</p>
+ <div class="row">
+    {% for product in products %}
+    <div class="col-md-4">
+    {% include 'product/single_product.html.twig' with {'product': product} %}
+    </div>
+    {% endfor %}
+</div><!-- /.row -->
+
+
+<!-- START THE FEATURETTES -->
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+ <div class="col-md-7">
+     <h2 class="featurette-heading">La Mode en Bretagne c'est le prestige. <span class="text-muted">La Bretagne en Fashion week</span></h2>
+     <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+ </div>
+ <div class="col-md-5">
+     <img src="{{asset('assets/img/deco.jpg')}}" class="img-fluid" alt="savoir-faire breton">
+ </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+ <div class="col-md-7 order-md-2">
+     <h2 class="featurette-heading">Boutique ouvert toute l'année <span class="text-muted">Entrer vous trouveriez votre bonheur.</span></h2>
+     <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+ </div>
+ <div class="col-md-5 order-md-1">
+ <img src="{{asset('assets/img/boutique4.jpg')}}" class="img-fluid" alt="boutique vouverte toute l'année">
+ </div>
+</div>
+<!-- /END THE FEATURETTES -->
+
+{% endblock %}
+
+

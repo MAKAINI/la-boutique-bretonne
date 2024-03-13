@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation de ma commande - la Boutique Bretonne{% endblock %}
+
+{% block content %}
+  <h2>Confirmation de la commande</h2>
+<p>
+   Bonjour <strong> {{order.user.firstname}} {{order.user.lastname}}</strong>,<br><br>
+   nous vous remercions de votre commande n°<strong>{{order.reference}}.</strong> <br>
+   Confirmation vient d'être envoyé par email à l'adresse <strong>{{order.user.email }}</strong> 
+    <hr>
+  votre colis sera livré par <strong>{{order.carrierName}}</strong> à l'adresse suivante
+    {{order.delivery|raw }}
+</p>
+ Pour poursuivre votre commande rendez sur votre <a href="{{path('app_account_order')}}">compte</a>
+{% endblock %}

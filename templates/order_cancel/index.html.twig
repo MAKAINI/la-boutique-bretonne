@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur de paiement - La Boutique Bretonne{% endblock %}
+
+{% block content %}
+<h2>Erreur de commande</h2>
+<p>
+Bonjour <strong> {{order.user.firstname}} {{order.user.lastname}}</strong>,<br><br>
+Il semblerait que votre paiement n'a pas abouti pour votre commande n°<strong>{{order.reference}}.</strong> <br>
+Confirmation d'erreur vient de vous d'être envoyé par email à l'adresse <strong>{{order.user.email }}</strong> 
+    <a href="{{path('app_order')}}" class="btn btn-success">Reessayer le paiement</a>
+</p>
+
+
+{% endblock %}

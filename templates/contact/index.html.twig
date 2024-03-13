@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter - La Boutique Bretonne{% endblock %}
+
+{% block content %}
+ <h2> Nous contacter</h2>
+  <p>N'hesistez pas à prendre contact avec notre équipe, nous vous répondrons dans un meilleur délai</p>
+    {% for message in app.flashes('notice') %}
+       <div class="alert alert-info">{{message}}</div>
+    {% endfor %} 
+  <div class="row">
+        <div class="col-md-8">{{form(form)}}</div>
+        <div class="col-md-4"></div>
+        <strong>Notre Boutique Bretonne</strong>
+            <br />
+            06 78 54 54 00
+            <br />
+            8,Rue de Marc Aurèle - 35000 Rennes<br />
+            contact@laboutiquebretonne.com
+ </div>
+{% endblock %}
